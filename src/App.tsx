@@ -3,6 +3,8 @@ import React from 'react';
 import {makeStyles, Box, Grid, Button} from '@material-ui/core'
 
 import { Header } from './component/Header'
+import { Cards } from './component/Cards'
+
 
 const useStyles = makeStyles(theme =>({
     root: {
@@ -25,10 +27,6 @@ const useStyles = makeStyles(theme =>({
         background: '#A3A3A3',
         height: 700,
         width: 700,
-    },
-    paper: {
-        height: 140,
-        width: 100,
     },
 }));
 
@@ -62,9 +60,47 @@ function App() {
                          borderColor="#626262"
                          borderRadius={10}
                          className={classes.table}>
-                        <Grid className={classes.paper}>
-
-                        </Grid>
+                        <Box p={2}>
+                            <Grid container
+                                  direction="row"
+                                  justify="space-evenly"
+                                  alignItems="center">
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                                <Cards/>
+                            </Grid>
+                        </Box>
                     </Box>
                 </Box>
             </Box>

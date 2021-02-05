@@ -1,6 +1,6 @@
 import React from 'react';
 
-import troikaGames from '../3Games.png';
+import troikaGames from '../assets/3Games.png';
 
 import {makeStyles, Box, CardMedia,} from '@material-ui/core'
 
