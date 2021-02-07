@@ -8,7 +8,7 @@ import Dog from "../assets/img/qwest/dog.png";
 
 const useStyles = makeStyles(theme =>({
     paper: {
-        margin: 28,
+        margin: 20,
         border: '1px solid',
         borderRadius: 5,
         color: '#999',
@@ -19,15 +19,15 @@ const useStyles = makeStyles(theme =>({
             transform: 'scale(0.97)',
             transition: 'transform .2s',
         },
-        height: 120,
-        width: 80,
+        height: 135,
+        width: 100,
         background: '#FFF',
         borderRadius: 5,
     },
     content: {
         margin: 10,
-        height: 90,
-        width: 60,
+        height: 120,
+        width: 80,
         color: 'white',
     }
 }));
