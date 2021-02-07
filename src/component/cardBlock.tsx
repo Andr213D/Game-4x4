@@ -8,7 +8,7 @@ export let CardsBlock =(
         },
         {
             "id": 1,
-            "image": "Dog",
+            "image": "https://sun9-43.userapi.com/impg/eToqp7Wlejdma6cgI-F-0i4xTV3aQIufuUxihQ/KKqxKsIWeYo.jpg?size=1080x1523&quality=96&proxy=1&sign=c1aa46b7ee4f95cc83fc20c031e27b47&type=album",
             "name": "Dog",
             "types": 1,
         },
