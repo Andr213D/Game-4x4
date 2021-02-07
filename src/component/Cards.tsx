@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 
 import {makeStyles, Grid, CardMedia, Button, Box, Zoom,} from '@material-ui/core'
 import card from "../assets/img/Card.png";
-import { bigDog } from "../assets/img/qwest/bigDog.png";
-import Dog from "../assets/img/qwest/dog.png";
 
 const useStyles = makeStyles(theme =>({
     paper: {

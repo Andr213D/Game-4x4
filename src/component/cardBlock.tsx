@@ -2,13 +2,13 @@ export let CardsBlock =(
     [
         {
             "id": 0,
-            "image": "https://sun9-43.userapi.com/impg/eToqp7Wlejdma6cgI-F-0i4xTV3aQIufuUxihQ/KKqxKsIWeYo.jpg?size=1080x1523&quality=96&proxy=1&sign=c1aa46b7ee4f95cc83fc20c031e27b47&type=album",
+            "image": "https://nplus1.ru/images/2020/05/19/d34e831a6a3c439bfdc43fde6a4a7200.jpg",
             "name": "Dog",
             "types": 1,
         },
         {
             "id": 1,
-            "image": "https://sun9-43.userapi.com/impg/eToqp7Wlejdma6cgI-F-0i4xTV3aQIufuUxihQ/KKqxKsIWeYo.jpg?size=1080x1523&quality=96&proxy=1&sign=c1aa46b7ee4f95cc83fc20c031e27b47&type=album",
+            "image": "https://nplus1.ru/images/2020/05/19/d34e831a6a3c439bfdc43fde6a4a7200.jpg",
             "name": "Dog",
             "types": 1,
         },
