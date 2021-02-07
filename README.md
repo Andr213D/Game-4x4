@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# MeMory Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Someday she will be ready.
+
+But this is not yet end.
 
 ## Available Scripts
 
