@@ -1,12 +1,14 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 
 import {makeStyles, Grid, CardMedia, Button, Box, Zoom,} from '@material-ui/core'
-import card from "../assets/Card.png";
-import dog from "../assets/img/dog.png";
+import card from "../assets/img/Card.png";
+import { bigDog } from "../assets/img/qwest/bigDog.png";
+import Dog from "../assets/img/qwest/dog.png";
 
 const useStyles = makeStyles(theme =>({
     paper: {
-        margin: 5,
+        margin: 28,
         border: '1px solid',
         borderRadius: 5,
         color: '#999',
@@ -26,13 +28,22 @@ const useStyles = makeStyles(theme =>({
         margin: 10,
         height: 90,
         width: 60,
+        color: 'white',
     }
 }));
 
-export const Cards: React.FC = (): React.ReactElement => {
+export const Cards: React.FC = ( props )  : React.ReactElement => {
     const classes = useStyles();
     const [clicked, setClick] = useState(true);
     const handleClick = () => {setClick((prev) => !prev);};
+
+    const onAddCard = () => {
+        const obj = {
+            id,
+            type,
+        }
+        onClickСard(obj)
+    }
 
     return (
         <div>
@@ -41,8 +52,8 @@ export const Cards: React.FC = (): React.ReactElement => {
                     <CardMedia
                         className={classes.content}
                         component="img"
-                        image={dog}
-                        title="dog"
+                        image={props.image}
+                        title={props.name}
                     />
                 </Box>
                 <Zoom in={clicked}>
@@ -54,7 +65,7 @@ export const Cards: React.FC = (): React.ReactElement => {
                                 className={classes.button}
                                 component="img"
                                 image={card}
-                                title="card"
+                                title='card'
                             />
                         </Box>
                     </Button>

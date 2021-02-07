@@ -1,10 +1,11 @@
+// @ts-nocheck
 import React from 'react';
 
 import {makeStyles, Box, Grid, Button} from '@material-ui/core'
 
 import { Header } from './component/Header'
 import { Cards } from './component/Cards'
-
+import { CardsBlock } from './component/cardBlock'
 
 const useStyles = makeStyles(theme =>({
     root: {
@@ -30,8 +31,13 @@ const useStyles = makeStyles(theme =>({
     },
 }));
 
+const handleAddCard =  (obj) => {
+    dispatch(addPizzaToCart(obj))
+}
+
 function App() {
     const classes = useStyles();
+    //console.log(CardsBlock.map);
     return (
         <div className={classes.root}>
             <Header/>
@@ -65,40 +71,14 @@ function App() {
                                   direction="row"
                                   justify="space-evenly"
                                   alignItems="center">
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
+                                {
+                                    CardsBlock.map(obj =>
+                                        <Cards
+                                            onClickAddCard = {handleAddCard}
+                                            key={obj.id}
+                                            {...obj}
+                                        />)
+                                }
                             </Grid>
                         </Box>
                     </Box>

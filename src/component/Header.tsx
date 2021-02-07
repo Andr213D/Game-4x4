@@ -1,10 +1,11 @@
 import React from 'react';
 
-import troikaGames from '../assets/3Games.png';
+import troikaGames from '../assets/img/3Games.png';
 
 import {makeStyles, Box, CardMedia,} from '@material-ui/core'
 
 const useStyles = makeStyles(theme =>({
+
     headerWrapper: {
         display: 'block',
         height: '50px',
@@ -16,7 +17,6 @@ const useStyles = makeStyles(theme =>({
         height: 35,
         width: 35,
     },
-
 }));
 
 export const Header: React.FC = (): React.ReactElement => {
