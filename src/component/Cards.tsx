@@ -1,8 +1,8 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 
 import {makeStyles, Grid, CardMedia, Button, Box, Zoom,} from '@material-ui/core'
 import card from "../assets/img/Card.png";
+import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles(theme =>({
     paper: {
@@ -30,17 +30,35 @@ const useStyles = makeStyles(theme =>({
     }
 }));
 
-export const Cards: React.FC = ( props )  : React.ReactElement => {
+export const Cards: (obj: {
+    id: number;
+    image: string;
+    name: string;
+    types: number }, onClickCard:{obj: {
+        id: number;
+        types: number;}})
+    => React.ReactElement = (obj:{
+    id: number;
+    image: string;
+    name: string;
+    types: number; }, onClickCard:{obj: {
+        id: number;
+        types: number;}} )
+    :
+    React.ReactElement => {
+
+    const dispatch = useDispatch()
+    const onSelectHandleClick = () => {dispatch((handleClick))}
+
     const classes = useStyles();
     const [clicked, setClick] = useState(true);
-    const handleClick = () => {setClick((prev) => !prev);};
+    const handleClick = () => {setClick((prev:boolean) => !prev);};
 
     const onAddCard = () => {
         const obj = {
-            id,
-            type,
+            id: {},
+            types: {},
         }
-        onClickСard(obj)
     }
 
     return (
@@ -50,13 +68,14 @@ export const Cards: React.FC = ( props )  : React.ReactElement => {
                     <CardMedia
                         className={classes.content}
                         component="img"
-                        image={props.image}
-                        title={props.name}
+                        key={obj.id}
+                        image={obj.image}
+                        title={obj.name}
                     />
                 </Box>
                 <Zoom in={clicked}>
                     <Button
-                        onClick={handleClick}
+                        onClick={onSelectHandleClick}
                         className={classes.button}>
                         <Box zIndex="tooltip">
                             <CardMedia

@@ -1,6 +1,4 @@
-// @ts-nocheck
-
-export const rulesCard = ({handleAddCard}) => ({
+export const Click = () => ({
     type: 'GET_CARD',
-    payload: {handleAddCard}
+    payload: {Click}
 })

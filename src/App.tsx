@@ -1,6 +1,5 @@
-// @ts-nocheck
 import React from 'react';
-
+import { useDispatch } from 'react-redux';
 import {makeStyles, Box, Grid, Button} from '@material-ui/core'
 
 import { Header } from './component/Header'
@@ -31,13 +30,15 @@ const useStyles = makeStyles(theme =>({
     },
 }));
 
-const handleAddCard =  (obj) => {
-    dispatch(addPizzaToCart(obj))
-}
 
 function App() {
+    const dispatch = useDispatch()
+    const handleAddCard =  (obj: {
+        id: number;
+        types: number;}) => {dispatch((obj));
+    }
     const classes = useStyles();
-    //console.log(CardsBlock.map);
+
     return (
         <div className={classes.root}>
             <Header/>
@@ -74,7 +75,7 @@ function App() {
                                 {
                                     CardsBlock.map(obj =>
                                         <Cards
-                                            onClickAddCard = {handleAddCard}
+                                            //onClickCard = {handleAddCard}
                                             key={obj.id}
                                             {...obj}
                                         />)

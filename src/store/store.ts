@@ -8,13 +8,13 @@ declare global {
         __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose
     }
 }
+// @ts-ignore
 export const rootReducer = combineReducers({
-//    rules
+    //rulesGame:{rulesGame: any}
 })
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
 export const store = createStore(rootReducer,
     composeEnhancers( applyMiddleware(thunk)))
-
 
 export default store
