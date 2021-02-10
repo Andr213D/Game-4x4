@@ -5,6 +5,7 @@ import {makeStyles, Box, Grid, Button} from '@material-ui/core'
 import { Header } from './component/Header'
 import { Cards } from './component/Cards'
 import { CardsBlock } from './component/cardBlock'
+import {setCards} from "./store/card/actionCreators";
 
 const useStyles = makeStyles(theme =>({
     root: {
@@ -33,12 +34,9 @@ const useStyles = makeStyles(theme =>({
 
 function App() {
     const dispatch = useDispatch()
-    const handleAddCard =  (obj: {
-        id: number;
-        types: number;}) => {dispatch((obj));
-    }
+    const handleAddCard = () => {dispatch(setCards([]));}
     const classes = useStyles();
-
+console.log(handleAddCard)
     return (
         <div className={classes.root}>
             <Header/>
@@ -75,7 +73,7 @@ function App() {
                                 {
                                     CardsBlock.map(obj =>
                                         <Cards
-                                            //onClickCard = {handleAddCard}
+                                            onClickCard = {handleAddCard}
                                             key={obj.id}
                                             {...obj}
                                         />)
