@@ -34,51 +34,49 @@ interface CardProps {
     name: string;
     types: number;
     onClickCard: any;
-    //classes: ReturnType<typeof useHomeStyles>;
 }
-export const Cards: React.FC<CardProps> =
-    ({
-         id,
-         image,
-         name,
-         types,
-         onClickCard}: CardProps) :React.ReactElement => {
+export const Cards: React.FC<CardProps> = ({
+    id,
+    image,
+    name,
+    types,
+    onClickCard}: CardProps) :React.ReactElement => {
 
-        const classes = useStyles();
-        const [clicked, setClick] = useState(true);
-        const handleClick = (): void => {setClick((prev:boolean) => !prev);};
-        const onAddCard = () => {
-            {const obj = {id, types,}
-                onClickCard(obj)}
-        }
+    const classes = useStyles();
+    const [clicked, setClick] = useState(true);
+    const handleClick = (): void => {setClick((prev:boolean) => !prev);};
+    const onAddCard = () => {
+        {const obj = {id, types,}
+            onClickCard(obj)}
+    }
 
-        return (
-            <div >
-                <Grid  className={classes.paper}>
-                    <Box position='absolute' >
-                        <CardMedia
-                            className={classes.content}
-                            component="img"
-                            key={id}
-                            image={image}
-                            title={name}
-                        />
-                    </Box>
-                    <Zoom in={clicked}>
-                        <Button
-                            onClick={onAddCard}
-                            className={classes.button}>
-                            <Box zIndex="tooltip">
-                                <CardMedia
-                                    className={classes.button}
-                                    component="img"
-                                    image={card}
-                                    title='card'
-                                />
-                            </Box>
-                        </Button>
-                    </Zoom>
-                </Grid>
-            </div>
-        );
-    };
+    return (
+        <div >
+            <Grid  className={classes.paper}>
+                <Box position='absolute' >
+                    <CardMedia
+                        className={classes.content}
+                        component="img"
+                        key={id}
+                        image={image}
+                        title={name}
+                    />
+                </Box>
+                <Zoom in={clicked}>
+                    <Button
+                        onClick={onAddCard}
+                        className={classes.button}>
+                        <Box zIndex="tooltip">
+                            <CardMedia
+                                className={classes.button}
+                                component="img"
+                                image={card}
+                                title='card'
+                            />
+                        </Box>
+                    </Button>
+                </Zoom>
+            </Grid>
+        </div>
+    );
+};

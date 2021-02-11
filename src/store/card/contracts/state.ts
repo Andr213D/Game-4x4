@@ -1,4 +1,3 @@
-import { LoadingStatus } from "../../types";
 
 export interface Card {
     types: number;
@@ -7,5 +6,4 @@ export interface Card {
 
 export interface CardsState {
     items: Card[];
-    LoadingStatus: LoadingStatus;
 }

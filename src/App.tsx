@@ -36,7 +36,7 @@ function App() {
     const dispatch = useDispatch()
     const handleAddCard = () => {dispatch(setCards([]));}
     const classes = useStyles();
-console.log(handleAddCard)
+    console.log(handleAddCard)
     return (
         <div className={classes.root}>
             <Header/>
