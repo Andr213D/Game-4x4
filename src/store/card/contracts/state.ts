@@ -1,6 +1,7 @@
 
 export interface Card {
     types: number;
+    id: number;
     click: boolean;
 }
 

@@ -34,9 +34,11 @@ const useStyles = makeStyles(theme =>({
 
 function App() {
     const dispatch = useDispatch()
-    const handleAddCard = () => {dispatch(setCards([]));}
+    const handleAddCard = (obj: any) => {dispatch(setCards(obj));}
+    //const handleClick = useSelector(selectTagsItems);
+
     const classes = useStyles();
-    console.log(handleAddCard)
+
     return (
         <div className={classes.root}>
             <Header/>

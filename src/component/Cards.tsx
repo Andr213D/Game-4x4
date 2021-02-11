@@ -49,7 +49,6 @@ export const Cards: React.FC<CardProps> = ({
         {const obj = {id, types,}
             onClickCard(obj)}
     }
-
     return (
         <div >
             <Grid  className={classes.paper}>
