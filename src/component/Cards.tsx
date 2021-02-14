@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import {makeStyles, Grid, CardMedia, Button, Box, Zoom,} from '@material-ui/core'
 import card from "../assets/img/Card.png";
@@ -33,6 +33,7 @@ interface CardProps {
     image: string;
     name: string;
     types: number;
+    click: boolean;
     onClickCard: any;
 }
 export const Cards: React.FC<CardProps> = ({
@@ -40,15 +41,16 @@ export const Cards: React.FC<CardProps> = ({
     image,
     name,
     types,
+    click,
     onClickCard}: CardProps) :React.ReactElement => {
 
     const classes = useStyles();
-    const [clicked, setClick] = useState(true);
-    const handleClick = (): void => {setClick((prev:boolean) => !prev);};
     const onAddCard = () => {
-        {const obj = {id, types,}
+        {const obj = {id, types, click,}
             onClickCard(obj)}
     }
+    // @ts-ignore
+
     return (
         <div >
             <Grid  className={classes.paper}>
@@ -61,7 +63,7 @@ export const Cards: React.FC<CardProps> = ({
                         title={name}
                     />
                 </Box>
-                <Zoom in={clicked}>
+                <Zoom in={click}>
                     <Button
                         onClick={onAddCard}
                         className={classes.button}>

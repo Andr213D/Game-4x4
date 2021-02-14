@@ -1,11 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {makeStyles, Box, Grid, Button} from '@material-ui/core'
 
 import { Header } from './component/Header'
 import { Cards } from './component/Cards'
 import { CardsBlock } from './component/cardBlock'
 import {setCards} from "./store/card/actionCreators";
+//import {selectCardsItems} from "./store/card/selectors";
 
 const useStyles = makeStyles(theme =>({
     root: {
@@ -35,10 +36,15 @@ const useStyles = makeStyles(theme =>({
 function App() {
     const dispatch = useDispatch()
     const handleAddCard = (obj: any) => {dispatch(setCards(obj));}
-    //const handleClick = useSelector(selectTagsItems);
-
+    const shirtCard  =  useSelector (( AddCardsState ) =>{
+        return {
+            shirtCard: false
+        }
+        }
+    )
+    console.log(handleAddCard)
+    console.log(shirtCard)
     const classes = useStyles();
-
     return (
         <div className={classes.root}>
             <Header/>
@@ -77,6 +83,8 @@ function App() {
                                         <Cards
                                             onClickCard = {handleAddCard}
                                             key={obj.id}
+                                            // @ts-ignore
+                                            click={shirtCard}
                                             {...obj}
                                         />)
                                 }

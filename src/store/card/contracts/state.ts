@@ -1,10 +1,10 @@
 
-export interface Card {
+export interface CardProperty {
     types: number;
     id: number;
     click: boolean;
 }
 
 export interface CardsState {
-    items: Card[];
+    items: CardProperty[];
 }
