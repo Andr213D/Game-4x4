@@ -33,7 +33,7 @@ interface CardProps {
     image: string;
     name: string;
     types: number;
-    click: boolean;
+    shirtClick: boolean;
     onClickCard: any;
 }
 export const Cards: React.FC<CardProps> = ({
@@ -41,16 +41,14 @@ export const Cards: React.FC<CardProps> = ({
     image,
     name,
     types,
-    click,
+    shirtClick,
     onClickCard}: CardProps) :React.ReactElement => {
 
     const classes = useStyles();
     const onAddCard = () => {
-        {const obj = {id, types, click,}
+        {const obj = {id, types,}
             onClickCard(obj)}
     }
-    // @ts-ignore
-
     return (
         <div >
             <Grid  className={classes.paper}>
@@ -63,7 +61,7 @@ export const Cards: React.FC<CardProps> = ({
                         title={name}
                     />
                 </Box>
-                <Zoom in={click}>
+                <Zoom in={shirtClick}>
                     <Button
                         onClick={onAddCard}
                         className={classes.button}>

@@ -4,14 +4,14 @@ import { CardsState } from './contracts/state';
 
 const initialCardsState = {
     items:[],
-    shirtCard: false
+    shirtCard: true
 };
 
 export const AddCardsState = produce((draft: Draft<CardsState>, action: CardsActions) => {
     switch (action.type) {
         case CardsActionsType.SET_CARDS:{
             draft.items = action.payload;
-            const shirtCard = (shirtCard: true) => false
+            const shirtCard = (shirtCard: boolean) => false
         }
             //draft.items = action.payload;
             //draft.items = draft.items.filter((obj) => obj.types = action.payload);

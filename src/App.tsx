@@ -36,14 +36,8 @@ const useStyles = makeStyles(theme =>({
 function App() {
     const dispatch = useDispatch()
     const handleAddCard = (obj: any) => {dispatch(setCards(obj));}
-    const shirtCard  =  useSelector (( AddCardsState ) =>{
-        return {
-            shirtCard: false
-        }
-        }
-    )
-    console.log(handleAddCard)
-    console.log(shirtCard)
+    const shirtCard  =  useSelector (( AddCardsState ) => AddCardsState)
+    console.log(Object.entries(shirtCard))
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -84,7 +78,7 @@ function App() {
                                             onClickCard = {handleAddCard}
                                             key={obj.id}
                                             // @ts-ignore
-                                            click={shirtCard}
+                                            shirtClick={shirtCard}
                                             {...obj}
                                         />)
                                 }
