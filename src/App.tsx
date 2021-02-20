@@ -6,6 +6,7 @@ import { Header } from './component/Header'
 import { Cards } from './component/Cards'
 import { CardsBlock } from './component/cardBlock'
 import {setCards} from "./store/card/actionCreators";
+import {cardInterface} from "./store/rootReducer";
 //import {selectCardsItems} from "./store/card/selectors";
 
 const useStyles = makeStyles(theme =>({
@@ -36,15 +37,19 @@ const useStyles = makeStyles(theme =>({
 function App() {
     const dispatch = useDispatch()
     const handleAddCard = (obj: any) => {dispatch(setCards(obj));}
-    const shirtCard  =  useSelector (( AddCardsState ) => AddCardsState)
-    console.log(Object.entries(shirtCard))
+    const shirtCard  =  useSelector ((state: cardInterface ) => state.card.items.shirtClick)
+    console.log(shirtCard);
+    //console.log(Object.entries(shirtCard))
+    //console.log(Object.values(shirtCard))
+    const shirtClickCard = shirtCard
+    console.log(shirtClickCard)
     const classes = useStyles();
     return (
         <div className={classes.root}>
             <Header/>
             <Box mx="auto" className={classes.wrapper}>
                 <Box display="flex" justifyContent="center" p={1} >
-                    <Button className={classes.buttonPlay}>
+                    <Button className={classes.buttonPlay} >
                         Play
                     </Button>
                 </Box>
@@ -77,8 +82,8 @@ function App() {
                                         <Cards
                                             onClickCard = {handleAddCard}
                                             key={obj.id}
-                                            // @ts-ignore
-                                            shirtClick={shirtCard}
+                                            //// @ts-ignore
+                                            shirtClick={shirtClickCard}
                                             {...obj}
                                         />)
                                 }

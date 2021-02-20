@@ -2,9 +2,9 @@
 export interface CardProperty {
     types: number;
     id: number;
-    click: boolean;
+    shirtClick: boolean;
 }
 
 export interface CardsState {
-    items: CardProperty[];
+    items: CardProperty;
 }

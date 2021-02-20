@@ -46,9 +46,10 @@ export const Cards: React.FC<CardProps> = ({
 
     const classes = useStyles();
     const onAddCard = () => {
-        {const obj = {id, types,}
+        {const obj = {id, types, shirtClick}
             onClickCard(obj)}
     }
+    const click = shirtClick
     return (
         <div >
             <Grid  className={classes.paper}>
@@ -61,7 +62,7 @@ export const Cards: React.FC<CardProps> = ({
                         title={name}
                     />
                 </Box>
-                <Zoom in={shirtClick}>
+                <Zoom in={click}>
                     <Button
                         onClick={onAddCard}
                         className={classes.button}>
