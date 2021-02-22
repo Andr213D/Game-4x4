@@ -4,7 +4,6 @@ import { CardsState } from './contracts/state';
 
 const initialCardsState = {
     items: {
-        types: [],
         id: [],
         shirtClick: true,
     }
@@ -13,13 +12,14 @@ const initialCardsState = {
 export const AddCardsState = produce((draft: Draft<CardsState>, action: CardsActions) => {
     switch (action.type) {
         case CardsActionsType.SET_CARDS:{
+            draft.items.id = action.payload.id;
             draft.items.shirtClick = false
         }
         //     return{
         //         shirtClick: false
         //     }
         // }
-        //draft.items = action.payload;
+        //
         //draft.items = draft.items.filter((obj) => obj.types = action.payload);
         //draft.items = draft.items.filter((click) => draft.items = action.payload);
         //console.log(draft.items)
@@ -29,4 +29,3 @@ export const AddCardsState = produce((draft: Draft<CardsState>, action: CardsAct
         //  };
     }
 }, initialCardsState)
-

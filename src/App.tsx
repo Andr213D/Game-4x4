@@ -37,12 +37,11 @@ const useStyles = makeStyles(theme =>({
 function App() {
     const dispatch = useDispatch()
     const handleAddCard = (obj: any) => {dispatch(setCards(obj));}
-    const shirtCard  =  useSelector ((state: cardInterface ) => state.card.items.shirtClick)
-    console.log(shirtCard);
+    const shirtCard  =  useSelector ((state: cardInterface ) => state.card.items)
+    //console.log(shirtCard);
     //console.log(Object.entries(shirtCard))
-    //console.log(Object.values(shirtCard))
-    const shirtClickCard = shirtCard
-    console.log(shirtClickCard)
+    //const shirtClickCard = shirtCard
+    //console.log(shirtClickCard)
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -83,7 +82,7 @@ function App() {
                                             onClickCard = {handleAddCard}
                                             key={obj.id}
                                             //// @ts-ignore
-                                            shirtClick={shirtClickCard}
+                                            shirtAddClick={ shirtCard }
                                             {...obj}
                                         />)
                                 }
