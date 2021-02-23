@@ -71,7 +71,7 @@ function App() {
                          borderColor="#626262"
                          borderRadius={10}
                          className={classes.table}>
-                        <Box p={2}>;
+                        <Box p={2}>
                             <Grid container
                                   direction="row"
                                   justify="space-evenly"
@@ -82,8 +82,8 @@ function App() {
                                         <Cards
                                             onClickCard = {handleAddCard}
                                             key={obj.id}
-                                            //// @ts-ignore
-                                            shirtAddClick={ shirtCard.shirtClick[obj.id] }
+                                            // @ts-ignore
+                                            shirtAddClick={ shirtCard.shirtClick && obj.id}
                                             {...obj}
                                         />)
                                 }
