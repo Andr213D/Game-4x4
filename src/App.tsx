@@ -38,7 +38,7 @@ function App() {
     const dispatch = useDispatch()
     const handleAddCard = (obj: any) => {dispatch(setCards(obj));}
     const shirtCard  =  useSelector ((state: cardInterface ) => state.card.items)
-    //console.log(shirtCard);
+    console.log(shirtCard);
     //console.log(Object.entries(shirtCard))
     //const shirtClickCard = shirtCard
     //console.log(shirtClickCard)
@@ -71,18 +71,19 @@ function App() {
                          borderColor="#626262"
                          borderRadius={10}
                          className={classes.table}>
-                        <Box p={2}>
+                        <Box p={2}>;
                             <Grid container
                                   direction="row"
                                   justify="space-evenly"
                                   alignItems="center">
                                 {
                                     CardsBlock.map(obj =>
+                                        //console.log("obj:", obj))
                                         <Cards
                                             onClickCard = {handleAddCard}
                                             key={obj.id}
                                             //// @ts-ignore
-                                            shirtAddClick={ shirtCard }
+                                            shirtAddClick={ shirtCard.shirtClick[obj.id] }
                                             {...obj}
                                         />)
                                 }

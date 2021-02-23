@@ -33,7 +33,7 @@ interface CardProps {
     image: string;
     name: string;
     types: number;
-    shirtAddClick: any;
+    shirtAddClick: boolean;
     onClickCard: any;
 }
 export const Cards: React.FC<CardProps> = ({
@@ -49,7 +49,7 @@ export const Cards: React.FC<CardProps> = ({
         {const obj = {id, types }
             onClickCard(obj)}
     }
-    const click = shirtAddClick.shirtClick
+    const click = shirtAddClick
     console.log(click)
     return (
         <div >
