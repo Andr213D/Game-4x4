@@ -22,9 +22,10 @@ const useStyles = makeStyles(theme =>({
         borderRadius: 5,
     },
     content: {
-        margin: 10,
-        height: 120,
-        width: 80,
+        borderRadius: 5,
+        margin: 5,
+        height: 125,
+        width: 90,
         color: 'white',
     }
 }));
@@ -33,7 +34,7 @@ interface CardProps {
     image: string;
     name: string;
     types: number;
-    shirtAddClick: boolean;
+    shirtAddClick: any;
     onClickCard: any;
 }
 export const Cards: React.FC<CardProps> = ({

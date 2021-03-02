@@ -33,15 +33,13 @@ const useStyles = makeStyles(theme =>({
     },
 }));
 
-
 function App() {
     const dispatch = useDispatch()
     const handleAddCard = (obj: any) => {dispatch(setCards(obj));}
     const shirtCard  =  useSelector ((state: cardInterface ) => state.card.items)
     console.log(shirtCard);
-    //console.log(Object.entries(shirtCard))
-    //const shirtClickCard = shirtCard
-    //console.log(shirtClickCard)
+    const  shirtClickCard = [1,2,shirtCard.shirtClick, shirtCard.id]
+    console.log(shirtClickCard)
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -82,9 +80,11 @@ function App() {
                                         <Cards
                                             onClickCard = {handleAddCard}
                                             key={obj.id}
-                                            // @ts-ignore
-                                            shirtAddClick={ shirtCard.shirtClick && obj.id}
-                                            {...obj}
+                                            //// @ts-ignore
+                                            //shirtAddClick = { [obj.id].splice(shirtCard.id, 1 , shirtCard.shirtClick) }
+                                            shirtAddClick = { shirtClickCard[obj.id] }
+                                            { ...obj }
+
                                         />)
                                 }
                             </Grid>
