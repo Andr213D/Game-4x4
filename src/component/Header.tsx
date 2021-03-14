@@ -2,7 +2,9 @@ import React from 'react';
 
 import troikaGames from '../assets/img/3Games.png';
 
-import {makeStyles, Box, CardMedia,} from '@material-ui/core'
+import makeStyles  from '@material-ui/styles/makeStyles'
+import CardMedia   from '@material-ui/core/CardMedia'
+import Box         from '@material-ui/core/Box'
 
 const useStyles = makeStyles(theme =>({
 

@@ -10,12 +10,9 @@ export interface SetCardsActionInterface extends Action<CardsActionsType> {
     payload: CardsState['items'];
 }
 
-
 export const setCards = (payload: CardsState['items']): SetCardsActionInterface => ({
     type: CardsActionsType.SET_CARDS,
     payload,
 });
 
-
-export type CardsActions =
-    | SetCardsActionInterface
+export type CardsActions = SetCardsActionInterface

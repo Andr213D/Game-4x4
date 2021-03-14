@@ -1,6 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {makeStyles, Box, Grid, Button} from '@material-ui/core'
+
+import makeStyles  from '@material-ui/styles/makeStyles'
+import Grid        from '@material-ui/core/Grid'
+import Button      from '@material-ui/core/Button'
+import Box         from '@material-ui/core/Box'
 
 import { Header } from './component/Header'
 import { Cards } from './component/Cards'
@@ -36,10 +40,13 @@ const useStyles = makeStyles(theme =>({
 function App() {
     const dispatch = useDispatch()
     const handleAddCard = (obj: any) => {dispatch(setCards(obj));}
-    const shirtCard  =  useSelector ((state: cardInterface ) => state.card.items)
-    console.log(shirtCard);
-    const  shirtClickCard = [1,2,shirtCard.shirtClick, shirtCard.id]
-    console.log(shirtClickCard)
+    const shirtCard  =  useSelector (( state: cardInterface ) => state.card.items)
+    const  shirtClickCard = shirtCard.shirtClick
+    // @ts-ignore
+    const randomCards = CardsBlock[Math.floor(Math.random() * CardsBlock.length)];
+    console.log (randomCards)
+    // const randomItem = (items: any) =>{
+    //     return items[Math.floor(Math.random()*items.length)]}
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -75,16 +82,13 @@ function App() {
                                   justify="space-evenly"
                                   alignItems="center">
                                 {
-                                    CardsBlock.map(obj =>
-                                        //console.log("obj:", obj))
+                                    CardsBlock.map((obj: any) =>
                                         <Cards
                                             onClickCard = {handleAddCard}
                                             key={obj.id}
                                             //// @ts-ignore
-                                            //shirtAddClick = { [obj.id].splice(shirtCard.id, 1 , shirtCard.shirtClick) }
                                             shirtAddClick = { shirtClickCard[obj.id] }
                                             { ...obj }
-
                                         />)
                                 }
                             </Grid>
