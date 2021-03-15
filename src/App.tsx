@@ -36,17 +36,22 @@ const useStyles = makeStyles(theme =>({
         width: 700,
     },
 }));
+// const randomCards = CardsBlock[Math.floor(Math.random() * CardsBlock.length)];
+// console.log (randomCards)
+
+function shuffle(array: any) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+console.log (shuffle(CardsBlock))
 
 function App() {
     const dispatch = useDispatch()
     const handleAddCard = (obj: any) => {dispatch(setCards(obj));}
     const shirtCard  =  useSelector (( state: cardInterface ) => state.card.items)
-    const  shirtClickCard = shirtCard.shirtClick
-    // @ts-ignore
-    const randomCards = CardsBlock[Math.floor(Math.random() * CardsBlock.length)];
-    console.log (randomCards)
-    // const randomItem = (items: any) =>{
-    //     return items[Math.floor(Math.random()*items.length)]}
+    const shirtClickCard = shirtCard.shirtClick
     const classes = useStyles();
     return (
         <div className={classes.root}>
