@@ -8,4 +8,7 @@ export interface CardProperty {
 export interface CardsState {
     items: CardProperty;
     valCards: any;
+    shirtPosition: boolean;
+    lastShirtType: number;
+    lastShirtId: number;
 }

@@ -36,8 +36,6 @@ const useStyles = makeStyles(theme =>({
         width: 700,
     },
 }));
-// const randomCards = CardsBlock[Math.floor(Math.random() * CardsBlock.length)];
-// console.log (randomCards)
 
 function shuffle(array: any) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -45,7 +43,8 @@ function shuffle(array: any) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-console.log (shuffle(CardsBlock))
+
+shuffle(CardsBlock)
 
 function App() {
     const dispatch = useDispatch()
