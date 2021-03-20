@@ -12,8 +12,8 @@ const valCards = [
 const initialCardsState = {
     items: {
         shirtClick: valCards,
-        shirtPosition: false,
-    }
+    },
+    shirtPosition: false
 };
 
 export const AddCardsState = produce((draft: Draft<CardsState>, action: CardsActions) => {
@@ -37,10 +37,17 @@ export const AddCardsState = produce((draft: Draft<CardsState>, action: CardsAct
             else {
                 draft.items.shirtClick = draft.items.shirtClick.splice(id, 1, false) &&
                     draft.items.shirtClick
-                draft.items.shirtClick = draft.items.shirtClick.splice(id, 1, true) &&
-                    draft.items.shirtClick &&
+                setTimeout(() => console.log(
+                    [1,2,3]
+                    // draft.items.shirtClick.splice(id, 1, true) &&
+                    // draft.items.shirtClick.splice(draft.lastShirtId, 1, true)
+                    )
+                    , 2000)
+                draft.items.shirtClick =
+                    draft.items.shirtClick.splice(id, 1, true) &&
                     draft.items.shirtClick.splice(draft.lastShirtId, 1, true) &&
                     draft.items.shirtClick
+                console.log(draft.items.shirtClick)
                 draft.shirtPosition = false
             }
         }
