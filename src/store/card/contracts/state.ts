@@ -9,6 +9,7 @@ export interface CardsState {
     items: CardProperty;
     valCards: any;
     shirtPosition: boolean;
+    shirtDispatch: any;
     lastShirtType: number;
     lastShirtId: number;
 }

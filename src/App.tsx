@@ -9,9 +9,8 @@ import Box         from '@material-ui/core/Box'
 import { Header } from './component/Header'
 import { Cards } from './component/Cards'
 import { CardsBlock } from './component/cardBlock'
-import {setCards} from "./store/card/actionCreators";
+import {setCards, setShirt} from "./store/card/actionCreators";
 import {cardInterface} from "./store/rootReducer";
-//import {selectCardsItems} from "./store/card/selectors";
 
 const useStyles = makeStyles(theme =>({
     root: {
@@ -49,9 +48,11 @@ shuffle(CardsBlock)
 function App() {
     const dispatch = useDispatch()
     const handleAddCard = (obj: any) => {dispatch(setCards(obj));}
-    const shirtCard  =  useSelector (( state: cardInterface ) => state.card.items)
-    const shirtClickCard = shirtCard.shirtClick
+    const shirtCard = useSelector (( state: cardInterface ) => state.card)
+    React.useEffect(() => {dispatch(setShirt())},
+        [shirtCard.shirtDispatch])
     const classes = useStyles();
+
     return (
         <div className={classes.root}>
             <Header/>
@@ -91,7 +92,7 @@ function App() {
                                             onClickCard = {handleAddCard}
                                             key={obj.id}
                                             //// @ts-ignore
-                                            shirtAddClick = { shirtClickCard[obj.id] }
+                                            shirtAddClick = { shirtCard.items.shirtClick[obj.id] }
                                             { ...obj }
                                         />)
                                 }
