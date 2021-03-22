@@ -12,4 +12,5 @@ export interface CardsState {
     shirtDispatch: any;
     lastShirtType: number;
     lastShirtId: number;
+    shirtBlock: boolean,
 }

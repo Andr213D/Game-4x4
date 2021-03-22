@@ -92,6 +92,7 @@ function App() {
                                             onClickCard = {handleAddCard}
                                             key={obj.id}
                                             //// @ts-ignore
+                                            shirtAddBlock = { shirtCard.shirtBlock }
                                             shirtAddClick = { shirtCard.items.shirtClick[obj.id] }
                                             { ...obj }
                                         />)

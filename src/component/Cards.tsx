@@ -41,6 +41,7 @@ interface CardProps {
     name: string;
     types: number;
     shirtAddClick: any;
+    shirtAddBlock: boolean;
     onClickCard: any;
 }
 export const Cards: React.FC<CardProps> = ({
@@ -49,6 +50,7 @@ export const Cards: React.FC<CardProps> = ({
     name,
     types,
     shirtAddClick,
+    shirtAddBlock,
     onClickCard}: CardProps) :React.ReactElement => {
 
     const classes = useStyles();
@@ -57,6 +59,7 @@ export const Cards: React.FC<CardProps> = ({
             onClickCard(obj)}
     }
     const click = shirtAddClick
+    console.log(shirtAddBlock)
     return (
         <div >
             <Grid  className={classes.paper}>
@@ -72,6 +75,7 @@ export const Cards: React.FC<CardProps> = ({
                 <Zoom in={click}>
                     <Button
                         onClick={onAddCard}
+                        disabled = {shirtAddBlock}
                         className={classes.button}>
                         <Box zIndex="tooltip">
                             <CardMedia

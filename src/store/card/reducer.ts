@@ -15,6 +15,7 @@ const initialCardsState = {
     },
     shirtPosition: false,
     shirtDispatch: null,
+    shirtBlock: false,
 };
 
 export const AddCardsState = produce((draft: Draft<CardsState>, action: CardsActions) => {
@@ -47,6 +48,15 @@ export const AddCardsState = produce((draft: Draft<CardsState>, action: CardsAct
                 draft.items.shirtClick.splice(draft.lastShirtId, 1, true) &&
                 draft.items.shirtClick
             draft.shirtPosition = false
+        }
+    }
+    switch (action.type) {
+        case CardsActionsType.SET_LOCKS_SHIRT:{
+            draft.shirtBlock = true
+        }}
+    switch (action.type) {
+        case CardsActionsType.SET_UNLOCKS_SHIRT:{
+            draft.shirtBlock = false
         }
     }
 }, initialCardsState)
