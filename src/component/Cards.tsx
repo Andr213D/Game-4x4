@@ -59,7 +59,6 @@ export const Cards: React.FC<CardProps> = ({
             onClickCard(obj)}
     }
     const click = shirtAddClick
-    console.log(shirtAddBlock)
     return (
         <div >
             <Grid  className={classes.paper}>
